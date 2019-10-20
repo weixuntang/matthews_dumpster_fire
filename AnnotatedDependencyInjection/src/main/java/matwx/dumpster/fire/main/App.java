@@ -41,7 +41,7 @@ public class App {
 	}
 
 	/**
-	 * Invoking football coach, performing setter injection.
+	 * Invoking football coach, performing constructor injection.
 	 * 
 	 * @param rootctx
 	 */
