@@ -1,6 +1,6 @@
 package matwx.dumpster.fire.interfaces;
 
-public interface Time {
+public interface DateTime {
 	
 	public String getCurrentTime();
 
