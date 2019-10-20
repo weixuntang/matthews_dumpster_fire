@@ -5,4 +5,4 @@ Dumpster
 
 Tutorial Recap
 
-Annotated Dependency Injection Proj Added
+- Annotated Dependency Injection Proj Added
