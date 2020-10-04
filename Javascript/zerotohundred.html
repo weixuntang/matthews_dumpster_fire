@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<title>zero 2 hundred</title>
+		<link rel="stylesheet" type ="text/css" href="zero2hundred.css"/>
+		<script src ="jquery-3.1.1.min.js"></script>
+		<script>
+			var rdnNumber = Math.floor(Math.random() * 100) + 1 ;
+			
+			function onLoad(){
+			document.getElementById("zero").innerHTML = "0";
+			document.getElementById("hundred").innerHTML = "100";
+			document.getElementById("to").innerHTML = "to"
+			}
+			
+			$(document).keypress(function(e) {
+			console.log(e.which);
+			if(e.which == 13) {
+			initiateGuess();
+			}
+			});
+			
+			function handle(e){
+				if (e.keyCode === 13) { 
+					e.preventDefault(); // Ensure it is only this code that rusn
+				initiateGuess();
+				}
+			}
+			
+			function initiateGuess (){
+			guessValue = document.getElementById("guess").value;
+			if(!guessValue){
+			speech("Please input guess value");
+			}else{
+			if(!isNaN(guessValue)){
+			if(guessValue < rdnNumber){
+			if(guessValue >= 0){
+			if(parseInt(guessValue) >= parseInt(document.getElementById("zero").innerHTML)){
+			document.getElementById("zero").innerHTML = guessValue;
+			speech(document.getElementById("zero").innerHTML+"to"+document.getElementById("hundred").innerHTML);
+			}
+			}
+			}else if(guessValue > rdnNumber){
+			if(guessValue <= 100){
+			if(parseInt(guessValue) <= parseInt(document.getElementById("hundred").innerHTML)){
+			document.getElementById("hundred").innerHTML = guessValue;
+			speech(document.getElementById("zero").innerHTML+"to"+document.getElementById("hundred").innerHTML);
+			}
+			}
+			}else{
+			speech("Congratulations  the lucky number is "+rdnNumber);
+			alert("Congratulations  the lucky number is "+rdnNumber);
+			document.getElementById("guess").style.display = 'none';
+			document.getElementById("zero").innerHTML = "Congratulations  the lucky number is "+rdnNumber+"<br><br> Please Hit (F5) to start a new game";
+			document.getElementById("to").style.display = 'none';
+			document.getElementById("hundred").style.display = 'none';
+			}
+			}else{
+			speech("non numeric characters detected");
+			}
+			}
+			}
+			
+			
+			function speech (data){
+			var msg = new SpeechSynthesisUtterance(data);
+			var voices = window.speechSynthesis.getVoices();
+			msg.voice = voices[10]; // Note: some voices don't support altering params
+			msg.voiceURI = 'native';
+			msg.volume = 1; // 0 to 1
+			msg.rate = 0.4; // 0.1 to 10
+			msg.pitch = 1; //0 to 2
+			msg.lang = 'en-US';
+			window.speechSynthesis.speak(msg);
+			}
+		</script>
+	</head>
+	<body onload = "onLoad()">
+	<br><br><br><br><br>
+		
+	<center><p id= "zero"></center>
+	<br><br><center id = "to"></center><br><br>
+	<center><p id ="hundred"></center>
+	
+	<br><br><br><br><br><br>
+	<center>
+	<input type = "text" id="guess" onkeypress="handle(event)"/>
+	</center>
+</html>
