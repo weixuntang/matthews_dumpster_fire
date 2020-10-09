@@ -4,17 +4,15 @@ public class FizzBuzz {
 	
 	public static void main(String [] args) {
 		
-		
-		//fizzBuzz(1000);
-		
-		fizzBuzz0(1000);
+		// fizzBuzz(1000);
+
+		// fizzBuzz0(1000);
 		
 	}
 
 	
-	public static void fizzBuzz0(int n) {
+	public static void fizzBuzz0(int totalNum) {
 		// Write your code here
-		int totalNum = n;
 
 		for (int digit = 1; digit <= totalNum; digit++) {
 
@@ -40,9 +38,7 @@ public class FizzBuzz {
 	
 	
 	
-	public static void fizzBuzz1(int n) {
-
-		int totalNum = n;
+	public static void fizzBuzz1(int totalNum) {
 
 		StringBuilder concatenatedString = new StringBuilder();
 
@@ -72,3 +68,5 @@ public class FizzBuzz {
 
 	}
 }
+
+
