@@ -2,11 +2,12 @@ package matwx.dumpster.fire.Dumpster;
 
 public class FizzBuzz {
 	
+	
 	public static void main(String [] args) {
 		
-		// fizzBuzz(1000);
+//		fizzBuzz(1000);
 
-		// fizzBuzz0(1000);
+//		fizzBuzz0(1000);
 		
 	}
 
@@ -38,7 +39,9 @@ public class FizzBuzz {
 	
 	
 	
-	public static void fizzBuzz1(int totalNum) {
+	public static void fizzBuzz(int totalNum) {
+		
+		String comma = ",";
 
 		StringBuilder concatenatedString = new StringBuilder();
 
@@ -49,16 +52,16 @@ public class FizzBuzz {
 			boolean multipleOfFive = 0 == digit % 5;
 
 			if (!multipleOfThree && !multipleOfFive) {
-				concatenatedString.append(Integer.toString(digit) + ",");
+				concatenatedString.append(Integer.toString(digit) + comma);
 			} else {
 				if (multipleOfFive && multipleOfThree) {
-					concatenatedString.append("FizzBuzz" + ",");
+					concatenatedString.append("FizzBuzz" + comma);
 
 				} else if (multipleOfFive) {
-					concatenatedString.append("Buzz" + ",");
+					concatenatedString.append("Buzz" + comma);
 
 				} else if (multipleOfThree) {
-					concatenatedString.append("Fizz" + ",");
+					concatenatedString.append("Fizz" + comma);
 
 				}
 			}
