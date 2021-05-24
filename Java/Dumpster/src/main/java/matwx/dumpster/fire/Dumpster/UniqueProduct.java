@@ -1,16 +1,15 @@
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class UniquePro {
-    
+
     public static String firstUniqueProduct(String[] products) {
 
         Set<String> lsOfProduct = new HashSet<>();
 
-        List<String> lsOfDuplicates = new ArrayList<>();
+        Set<String> lsOfDuplicates = new HashSet<>();
 
+//      Iterate thru the products and identify duplicate   
         for (String product : products) {
 
             if(!lsOfProduct.add(product)){
@@ -18,11 +17,12 @@ public class UniquePro {
             }
         }
 
+//      Iterate thru duplicates and remove from product   
         for(String duplicate : lsOfDuplicates){
             lsOfProduct.remove(duplicate);
         }
 
-
+//      Return the first product after cleanse.
         return lsOfProduct.toArray()[0].toString();
     }
 
