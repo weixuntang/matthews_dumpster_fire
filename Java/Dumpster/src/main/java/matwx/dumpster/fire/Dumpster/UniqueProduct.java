@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class UniquePro {
+public class UniqueProduct {
 
     public static String firstUniqueProduct(String[] products) {
 
