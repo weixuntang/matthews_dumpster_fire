@@ -12,7 +12,7 @@ public class UniquePro {
 //      Iterate thru the products and identify duplicate   
         for (String product : products) {
 
-            if(!lsOfProduct.add(product)){
+            if (!lsOfProduct.add(product)) {
                 lsOfDuplicates.add(product);
             }
         }
